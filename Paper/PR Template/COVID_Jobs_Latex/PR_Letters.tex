@@ -1,0 +1,678 @@
+%% This is file `prletters-template.tex',
+%%
+%% Copyright 2013 Elsevier Ltd
+%%
+%% This file is part of the 'Elsarticle Bundle'.
+%% ---------------------------------------------
+%%
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%%
+%% The list of all files belonging to the 'Elsarticle Bundle' is
+%% given in the file `manifest.txt'.
+%%
+%% Template article for Elsevier's document class `elsarticle'
+%% with harvard style bibliographic references
+%%
+%% $Id: prletters-template-with-authorship.tex 69 2013-07-15 10:15:25Z rishi $
+%%
+%% This template has no review option
+%%
+%% Use the options `twocolumn,final' to obtain the final layout
+\documentclass[times,twocolumn,final,authoryear]{elsarticle}
+
+%% Stylefile to load PR Letters template
+\usepackage{prletters}
+\usepackage{framed,multirow}
+
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage[]{algorithm2e}
+\usepackage{amsmath, xparse}
+
+\usepackage{scalerel}
+\usepackage{tikz}
+\usetikzlibrary{svg.path}
+\usepackage{subfig}
+\usepackage{array}
+\usepackage{tabularx,booktabs}
+\usepackage{longtable}
+\usepackage{float}
+
+\definecolor{orcidlogocol}{HTML}{A6CE39}
+\tikzset{
+	orcidlogo/.pic={
+		\fill[orcidlogocol] svg{M256,128c0,70.7-57.3,128-128,128C57.3,256,0,198.7,0,128C0,57.3,57.3,0,128,0C198.7,0,256,57.3,256,128z};
+		\fill[white] svg{M86.3,186.2H70.9V79.1h15.4v48.4V186.2z}
+		svg{M108.9,79.1h41.6c39.6,0,57,28.3,57,53.6c0,27.5-21.5,53.6-56.8,53.6h-41.8V79.1z M124.3,172.4h24.5c34.9,0,42.9-26.5,42.9-39.7c0-21.5-13.7-39.7-43.7-39.7h-23.7V172.4z}
+		svg{M88.7,56.8c0,5.5-4.5,10.1-10.1,10.1c-5.6,0-10.1-4.6-10.1-10.1c0-5.6,4.5-10.1,10.1-10.1C84.2,46.7,88.7,51.3,88.7,56.8z};
+	}
+}
+
+\newcommand\orcidicon[1]{\href{https://orcid.org/#1}{\mbox{\scalerel*{
+				\begin{tikzpicture}[yscale=-1,transform shape]
+					\pic{orcidlogo};
+				\end{tikzpicture}
+			}{|}}}}
+
+
+
+% Following three lines are needed for this document.
+% If you are not loading colors or url, then these are
+% not required.
+\usepackage{url}
+\usepackage{xcolor}
+\definecolor{newcolor}{rgb}{.8,.349,.1}
+
+\usepackage[hidelinks]{hyperref}
+\newcommand{\T}{^{\ensuremath{\mathsf{T}}}}           % transpose
+\newcommand{\mrsid}{{\sc \texttt{Mr}.~\texttt{Sid}}}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\newcommand{\diag}{\operatornamewithlimits{diag}}
+
+
+\journal{Pattern Recognition Letters}
+
+\begin{document}
+	
+	\thispagestyle{empty}
+	
+	\begin{table*}[!th]
+		
+		\begin{minipage}{.9\textwidth}
+			\baselineskip12pt
+			\ifpreprint
+			\vspace*{1pc}
+			\else
+			\vspace*{-6pc}
+			\fi
+			
+			\noindent {\LARGE\itshape Pattern Recognition Letters}
+			\vskip6pt
+			
+			\noindent {\Large\bfseries Authorship Confirmation}
+			
+			\vskip1pc
+			
+			
+			{\bf Please save a copy of this file, complete and upload as the
+				``Confirmation of Authorship'' file.}
+			
+			\vskip1pc
+			
+			As corresponding author
+			I, \underline{ Pawan Singh },
+			hereby confirm on behalf of all authors that:
+			
+			\vskip1pc
+			
+			\begin{enumerate}
+				\itemsep=3pt
+				\item This manuscript, or a large part of it, \underline {has not been
+					published,  was not, and is not being submitted to} any other journal.
+				
+				\item If \underline {presented} at or \underline {submitted} to or
+				\underline  {published }at a conference(s), the conference(s) is (are)
+				identified and  substantial \underline {justification for
+					re-publication} is presented  below. A \underline {copy of
+					conference paper(s) }is(are) uploaded with the  manuscript.
+				
+				\item If the manuscript appears as a preprint anywhere on the web, e.g.
+				arXiv,  etc., it is identified below. The \underline {preprint should
+					include a  statement that the paper is under consideration at Pattern
+					Recognition  Letters}.
+				
+				\item All text and graphics, except for those marked with sources, are
+				\underline  {original works} of the authors, and all necessary
+				permissions for  publication were secured prior to submission of the
+				manuscript.
+				
+				\item All authors each made a significant contribution to the research
+				reported  and have \underline {read} and \underline {approved} the
+				submitted  manuscript.
+			\end{enumerate}
+			
+			Signature\underline{: Pawan Singh} Date\underline{: 04/21/2021}
+			\vskip1pc
+			
+			\rule{\textwidth}{2pt}
+			{\bf List any pre-prints: NA}
+			\vskip1pc
+			
+			
+			\rule{\textwidth}{2pt}
+			{\bf Relevant Conference publication(s) (submitted, accepted, or published): NA}
+			\vskip1pc
+			
+			{\bf Justification for re-publication: NA}
+			
+		\end{minipage}
+	\end{table*}
+	
+	
+	\begin{table*}[!t]
+		\ifpreprint\else\vspace*{-15pc}\fi
+		
+		\section*{Research Highlights (Required)}
+		\fboxsep=6pt
+		\fbox{
+			\begin{minipage}{.95\textwidth}
+				
+				\vskip1pc
+				\begin{itemize}
+					
+					\item A novel time-series forecasting architecture that helps deal with sudden hike in the data.
+					
+					\item A pattern recognition architecture that helps to forecast unemployment rate in India in the post-pandemic timeframe.
+					
+					\item The current study proposes a novel architecture to deal with the rare unusual trends that are not seasonal in nature.
+					
+					\item Vanilla time-series forecasting frameworks remained ineligible to capture the rare sudden patterns.
+					
+					\item Study handles the issue of unavailability of adequate and proper data.
+					
+				\end{itemize}
+				\vskip1pc
+			\end{minipage}
+		}
+		
+	\end{table*}
+	
+	\clearpage
+	
+	
+	\ifpreprint
+	\setcounter{page}{1}
+	\else
+	\setcounter{page}{1}
+	\fi
+	
+	\begin{frontmatter}
+		
+		\title{Prognosticating the effect on Unemployment rate in the post-pandemic India via Time-Series Forecasting and Least Squares Approximation}
+		
+		\author[1]{Ashutosh \snm{Agrahari}\textsuperscript{\orcidicon{0000-0002-0692-4883}}}
+		\author[1]{Pawan \snm{Singh}\corref{cor1}\textsuperscript{\orcidicon{0000-0002-1342-9493}}}
+		\cortext[cor1]{Corresponding author: pawansingh51279@gmail.com}
+		\author[1]{Ankur \snm{Veer}}
+		\author[1]{Anshuman \snm{Singh}}
+		\author[2]{Ankit \snm{Vidyarthi}\textsuperscript{\orcidicon{0000-0002-8026-4246}}}
+		\author[3]{Baseem \snm{Khan}\textsuperscript{\orcidicon{0000-0002-5082-8311}}}
+		
+		
+		\address[1]{\small Dept. of Computer Science and Engineering, Amity University, Lucknow, India.}
+		\address[2]{Department of CSE \& IT, Jaypee Institute of Information Technology, Noida, India.}
+		\address[3]{Dept. of Electrical and Computer Engineering, Hawassa University, Hawassa P.O. Box 05, Ethiopia.}
+		
+		\received{xx xx 20xx}
+		\finalform{xx xx 20xx}
+		\accepted{xx xx 20xx}
+		\availableonline{xx xx 20xx}
+		\communicated{P. Singh}
+		
+		
+		\begin{abstract}
+			The current paper aims to analytically visualise the future outcomes that the post-pandemic India might have in store for its citizens. We use time series forecasting on various collected data and combined the statistics of economics-deciding parameters to forecast the trends that might be prevalent in the next year. Since, the data contains a single anomalous trend, even the Prophet model could not learn this property from the data since this trend is not seasonal in nature. The current study proposes a novel architecture to deal with these rare unusual trends by combining two models - one learning normal usual patterns and the other getting trained on usual as well as rare anomalous patterns. It could help in dealing with sudden hike patterns like due to COVID-19 in the data, and lead to better forecasting on future timeframes. We combined the results of two distinct time-forecasting models trained on two sets of data of varying timeline lengths, using parameters obtained from Least Squares Approximation (LSA). The LSA helps us find an approximate vector approximation so as to obtain a model performing closely to the actuals.						
+		\end{abstract}
+		
+		\begin{keyword}
+			ARIMA\sep Coronavirus\sep COVID-19\sep unemployment\sep time-series forecasting\sep Prophet\sep Least squares approximation\sep vector approximation
+		\end{keyword}
+		
+	\end{frontmatter}
+	
+	%\linenumbers
+	
+	%% main text
+	\section{Introduction}
+	
+	COVID-19 pandemic has hit the world very harshly. India has now become a hotspot of this pandemic after the USA and Brazil, after surpassing Russia in the number of cases, and is soon to enter stage 3 considering fatality rate. The countries are helpless before this natural phenomenon and are forced to implement lockdowns to prevent its spread. As is evident from many other historical pandemics and epidemics in various parts of the world, there has always been a great deal of adverse effects on the economic conditions of the country or the world as a whole. Consequently, due to lockdowns, trading and working in the industries is stalled which in turn leads to loss of jobs of numerous employees. The employers are then not in the position to support themselves and thereby many companies and industries get shut down. Since industries run a country's economy, and with the industries shutting down or getting in loss, the economy of the entire country gets disrupted. A disease outbreak, being at the scale of the world, affects the entire world. Since most countries are connected through trade and commerce, the pandemic can lead to utter loss of jobs and economy of nations.
+	
+	The COVID-19 disease has been growing steadily at an exponential rate throughout the world. Since its inception, it has disrupted various sectors of human life including business, health, education and governance. As of July 20, 2020 the number of cases is 14,360,451, out of which 603,285 have lost their life while 8,071,937 have recovered \cite{MOHFW}. The economies have been adversely affected and their GDP (Gross Domestic Product) is following a negative slope in today's scenarios. In India, due to sequence of lockdowns, menial laborers have lost their daily-wage jobs, and are left with nothing to sustain in this pandemic-affected economy, and hence many have died not due to the disease but of scarcity of money to support one's family. This is a very arduous situation in the country, and its citizens must not leave hope. Government has been doing its best to control this pandemic. It has taken many initiatives and cut down the cost of COVID-19 tests by half, but still the situation in the country is not under control and is surging high. 
+	
+	The unemployment rate in India had been swinging closely to around 2.7\% in previous years but has been exaggerated to an astonishing 15\% average during this pandemic, specially between March and May. The rules of social distancing and lockdown has added more to disruption rate of dwindling unemployment rate and consequently on the overall economy of the country. Apart from studying the effects of the pandemic on unemployment rate, inflation rate and economy growth rate, the paper also analyses the consequences of up-skilling at home, on academia and corporate world.  We run time-series forecasting on the collected data, and present our findings through comprehensive analysis of the results.
+	
+	The paper is organized as follows. Section \ref{Sec_Works} presents a discussion about the works that have been conducted and published in the past. Section \ref{Sec_Background} discusses the algorithms and time-series forecasting architectures used in the paper. Section \ref{Sec_Heuristic} outlines the methodology that has been adopted to implement analyses presented in the paper, and also describes the workflow that is used in the implementation of the proposed architecture. Section \ref{Sec_Data} talks about the issue of data unavailability, its collection and curation. Section \ref{Sec_Results} presents the results of the algorithms employed to perform time-series forecasting on the curated dataset. Section \ref{Sec_Comp} presents a comparative analysis of the proposed architecture with other available time-series forecasting frameworks and existing researches. Section \ref{Sec_Final} summarizes and concludes the paper. Finally, section \ref{Sec_Future} comments on the future scope of the current research.
+	
+	
+	\section{Related Work}\label{Sec_Works}
+	With the onset of the pandemic, a lot of researches have been conducted by researchers worldwide on the various aspects of the mankind's life from health and hygiene to social and environmental contexts. Sengupta et al. \cite{Sengupta} estimated the date when the number of cases would reach the peak and when it will flatten out using methods shared from data analysis and machine learning paradigm. Gupta et al. \cite{Gupta} used time-series forecasting methods like ARIMA to predict the future trends in the rise of the COVID positive cases in India. Poddar and Yadav \cite{Poddar} concluded the relationship between the pandemic and the downfall of Indian Economy based on their null hypothesis. Paul \cite{Paul} showed the effect of pandemic on Indian economy graphically which included representation of unemployment rate based on CMIE data and various other related parameters. Katris \cite{Katris} analyzed different machine learning (neural networks, support vector regression) and time series (ARIMA, FARIMA) models to predict unemployment rates of several countries. Karlsson and Javed \cite{Javed} used both univariate and multivariate time series models like SARIMA, SETAR and VAR, and various macroeconomic variablesto predict unemployment rate and presented the results with 95\% forecasting confidence of SARIMA model. The paper also suggested that short term forecasting models give better result than long term. Vikas et.al. in \cite{Vikas} used decision tree approach on the basis of the level of pessimism to predict the future unemployment rate in India. Khem et.al. in \cite{Khem} showed how various economic parameters effect unemployment rate in India, and they showed that 48\% of the effect is due to the GDP of the nation. They used correlation and regression analysis to come to their conclusion, and verified them against Okun's law and historical data. Dumičić in \cite{Dumicic} experimented with various forecasting models to predict unemployment rate separately for both the genders. It is not pertaining to India, but it is relevant to our study since it used Linear Trend Equation in MINITAB software along with various levels of smoothening to arrive at results closer to the actual.
+	
+	Most of the researches related to forecasting for COVID have been mainly to predict the number of cases, or predict the unemployment rate using vanilla models and algorithms. Our research focuses on the social sphere of the problems that arose as a consequence of the pandemic. We try to incorporate the sudden spike that happened as a consequence of the pandemic, which made making predictions over Indian economy difficult. In this paper, we handle the shortcomings of the unavailability of reliable data and also the sudden spike that disturbed the underlying mathematics of the models.
+	
+	\section{Background}\label{Sec_Background}
+	\subsection{Least Squares Approximation}
+	LSA is a method to approximate the solution to a set of linear equations for whom a real solution does not exist. It works by minimizing the sum of squares of residuals obtained by each single equation. It is most commonly used in the domain of data fitting, wherein the residuals are the difference between observed and actual values, and the LSA tries to minimize the sum of these residuals.
+	
+	\begin{figure}[!t]
+		\centering
+		\includegraphics[width=0.5\textwidth]{Figures/LSA.jpg}
+		\caption{\textcolor{red}{LSA tries to minimize the deviations from the actual points while fitting the predicted line. Image Credits: www.math4all.in}}
+		\label{LSA}
+	\end{figure}
+	
+	
+	Since, a line, representing solution, intersecting with the plane of set of equations, cannot be found, LSA tries to find a line that has minimum distance from the plane, thereby finding an approximate solution. It tries to find an approximate solution to the equation \(Ax = b\), but since no solution exists for this so LSA finds a projection of the line on the plane \(Ax - b = 0\) and minimizes the distance between line and plane. The final solution that LSA comes to is represented by Equation \ref{LSA_res}. In this equation, \(A^{T}\) is the transpose of the matrix \(A\), \(\hat{x}\) is the approximate solution, and \(b\) are actual values.
+	
+	\begin{equation}
+		\label{LSA_res}
+		A^{T}A\widehat{x}  =  A^{T}b
+	\end{equation}  
+	
+	\subsection{Levenberg-Marquardt Algorithm}
+	LMA is an optimization algorithm that combines the best of both the steepest gradient descent method and the Gauss-Newton method. It aims to find the minimum of linear or non-linear function having an array of parameters. The gradient descent method is useful when the initial point is far from minimum point of the function. The Gauss Newton algorithm is useful when initial point is close to the minimum point of the function. The combination of the two helps the algorithm become independent of initial point and hence Levenberg-Marquardt algorithm is derived. It can be expressed by Equation \ref{eq_LMA}.
+	\begin{equation}
+		\label{eq_LMA}
+		\begin{array}{l}
+			x_{n+1} = x_n - (H + \lambda I)^{-1} \bigtriangledown f(x_n) \\
+			when,\\
+			\lambda \rightarrow 0, \; Gauss-Newton's \; Method \\
+			\lambda \rightarrow \infty, \;  Gradient \; Descent \; Method
+		\end{array}
+	\end{equation}
+	Here, \(f(x)\) is a multi variable non-linear function, \(H\) is the Hessian matrix, \(I\) is the identity matrix, \(\lambda\) is a hyperparameter, and \(n\) is the number of iterations.\\
+	
+	\subsection{ARIMA}
+	ARIMA or the Auto-Regressive Integrated Moving Average is a purely statistical model. It is mainly employed in the time-series models by statisticians and economists. There are two types of models under ARIMA, namely, seasonal and non-seasonal. The non-seasonal model takes into consideration three parameters - \(p\), \(d\) and \(q\). Here, \(p\) refers to the number of lags to be used to predict the series or it is the order of Auto Regressive term. \(q\) refers to the number of lagged errors or it is the order of the Moving Average term. Since, the very first operation involved in ARIMA model is making time series stationary, so, to perform that the most common way is to difference the previous value from the present value. So, here comes the third parameter \(d\) which refers to the minimum number of differencing required to make the time series stationary. The non-seasonal model doesn't account for any seasonal patterns, so to add that functionality, Seasonal ARIMA or the SARIMA \cite{SARIMA} comes into picture. The mathematical form of the model involves two models - Auto Regressive model and Moving Average model. A pure Auto Regressive model can be mathematically expressed by Equation \ref{autoRegr}, 	where, \(Y_{t-1}\) is the lag \(1\) of time series, \(\beta_1\) refers to the coefficient of lag \(1\), \(\epsilon_1\) is the error term, and, \(\alpha\) refers to the intercept term.
+	
+	\begin{equation}
+		\label{autoRegr}
+		Y_t = \alpha + \sum_{i = 1}^{p}\beta_i Y_{t-i} + \epsilon_1
+	\end{equation}
+	
+	Similarly, Moving Average model can also be depicted mathematically by Equation \ref{movAvg}, where error terms \(\epsilon_i\) refer to errors from auto regressive model, \(\phi_i\) are the coefficients of error terms and \(\alpha\) is the intercept term. 
+	
+	\begin{equation}
+		\label{movAvg}
+		Y_t = \alpha + \sum_{i = 1}^{q}\phi_i \epsilon_{t-i} + \epsilon_t
+	\end{equation}
+	
+	Now, the ARIMA model consists of at least one differencing parameter to make time series stationary which combines Auto Regressive model and Moving Average model. The final mathematical form of the ARIMA model can be depicted by Equation \ref{arima}. 
+	
+	\begin{equation}
+		\label{arima}
+		Y_t = \alpha + \sum_{i = 1}^{p}\beta_i Y_{t-i} + \sum_{i = 1}^{q}\phi_i \epsilon_{t-i}
+	\end{equation}
+	
+	\subsection{Prophet}
+	Prophet \cite{Prophet} is an open-source time-series forecasting model developed by Facebook. The parameters in the model can be easily adjusted for tuning while integrating the core business knowledge. Missing data, outliers can be handled easily and automatically. The three main components of Prophet are \emph{trend}, \emph{seasonality} and \emph{holidays}. The mathematical model underneath Prophet is a decomposable additive model (Eqn. \ref{decomp_add_mod}) to accommodate the in-dependency of importance and forecasting effects of the components of the model.
+	
+	\begin{equation}
+		\label{decomp_add_mod}
+		y_m = \beta_0 + \sum_{n = 1}^{t}f_n(x_{mn}) + \epsilon_m
+	\end{equation}    
+	
+	\begin{equation}
+		\label{Pro_decompo}
+		y(t) = g(t) + s(t) + h(t) + \epsilon_t
+	\end{equation}
+	
+	The adapted version of the decomposable additive model can be expressed by the Equation \ref{Pro_decompo}. Here, \(g(t)\) represents trend, \(s(t)\) seasonality,  \(h(t)\) holidays and \(\epsilon_t\) the error term associated with modelling. The main advantage is that unlike all other models which are natively made for univariate time-series, Prophet very easily accommodates multivariate dimension of time-series data paradigm. Prophet proved to be the most reliable algorithms out of all the three techniques we employed in our experiments. The Prophet architecture is made to train on the univariate data.
+	
+	
+	
+	\section{Engineering Applications of Time-series Forecasting}
+	\snm{	Time series forecasting has already proven its importance in various fields like weather forecasting, process and quantity control, stock market predictions etc. The new emerging applications of time series analysis can be found in energy consumption sectors. Chirag Deb et al \cite{Chirag} review, showed the time series forecasting used for buildings and campuses energy consumptions. The new building’s energy consumption where the past data does not exist, computer simulation is used in such scenarios to predict future energy consumptions. While for existing buildings, where historical data is available time series forecasting is used to predict energy consumption and carbon emissions. Along with single time series data analysis, the energy data was also analyzed with other time series parameters like weather outside and inside conditions of environment. A hybrid model combining two or more forecasting techniques used, proved to be best for such time series forecasting.\\
+	The other important application of time series forecasting which has come out recently is forecasting of covid-19 hospital census. The planning of sufficient availability of covid-19 beds , personal protection equipment kits, intensive care units etc is important based on local infection incidence of covid-19.  Hieu M Nguyen et al \cite{Nguyen} used vector error correction model (VECM) to forecast COVID-19 Hospital Census: A Multivariate Time-Series Model Based on Local Infection Incidence. The VECM framework was used on local infection incidence and hospital census from May 15 to December 5, 2020 of North Carolina, United States. The 7 days ahead forecast was performance was measured by mean absolute percentage error (MAPE), with time series consolidation. The results achieved where then compared with regular ARIMA model and were proved far better than ARIMA.\\	
+	The applications of time series forecasting is also seem to be in container logistics industry. Sonali Shankar et al \cite{Sonali} used long short term memory (LSTM) to predict container throughput. This multi-billion dollar industry produces a huge revenue if an accurate forecasting is done even at any minute strategical level in the industry. The systematic use of port data is directly proportional to economic development of the inland region lying behind port. The LSTM model made, was then also compared with the other time series forecasting methods like autoregressive integrated moving average (ARIMA), simple exponential smoothing, Holt–Winter’s, error-trend-seasonality, trigonometric regressors (TBATS), neural network (NN) and ARIMA + NN. The evaluation was done on the dataset of Singapore port. The results indicated that LSTM outperformed these traditional methods.
+	}
+	
+	\section{Heuristic-based Model Training and Prediction}\label{Sec_Heuristic}
+	The prediction of future effects has been made using Facebook's time-series forecasting framework Prophet. The accumulated data was first cleaned and pre-processed as per the requirements. Due to the pandemic in 2020 and unavailability of required data, basic implementations of these models could not perform and give reliable results. 
+	
+	To overcome the predilection of the learning models on comparatively larger pre-pandemic historical data and the pandemic-induced sudden hike in unemployment rate, we propose a new computational model for time-series forecasting. We first held 10\% of the data, and trained the models on rest of it. We also made two datasets - one with COVID-19 patterns and other without it. The COVID-19 patterns could be seen in Indian economics from the beginning of 2020. Since, we have the actual patterns, we combine the results of models on two datasets and minimize its difference with the actual values by finding the most approximate solution to the set of linear equations that we model. The validation-optimization pipeline could be well illustrated by Figure \ref{Val-opt_Tech}.
+	
+	\begin{figure}[!t]
+		\centering
+		\includegraphics[width=0.5\textwidth]{Figures/Our_Arch.pdf}
+		\caption{Computational model for time-series forecasting to counteract the sudden COVID-19 pattern.}
+		\label{Val-opt_Tech}
+	\end{figure}
+	
+	We aim to minimize the function \(aP_{1} + bP_{2} - C\), where \(P_{1}\) is the vectors of predictions by the forecasting model that ran on dataset with COVID-19 patterns; \(P_{2}\) is the vectors of predictions by the forecasting model that ran on dataset without COVID-19 patterns; and \(C\) are the actual values for the held timeline. We then converted this equation to be represented using matrices, \textbf{AX - C}. Here, \textbf{A} is a \(2\times n\) matrix with each column containing \(P_{1}\) and \(P_{2}\) respectively, \textbf{X} is the vector of parameters \(a\) and \(b\) that need to be computed, and \textbf{C} is the vector of actual values. We then find an approximate solution to this matrix equation using Least Squares Approximation to obtain a vector approximation. Using this proposed technique, we could counteract the issue of sudden noise that got inserted into the data due to the pandemic. After getting optimal values of \(a\) and \(b\), we retrain the models on full datasets, and then forecast for the next 13 months timeline by combining the results of two models using the model described in Figure \ref{Val-opt_Tech}. Though, the hike is total anomaly in the pattern but it cannot be ignored, so we smoothed down the predicted results of the two models using a heuristic based on the length of timelines for which the two models have been trained on.
+	
+	\begin{algorithm}
+		\KwData{\(d_1\) = time-series data 1; \(d_2\) = time-series data 2}
+		\KwResult{Final optimum combined Predictions}
+		\(m_1\) = Prophet model trained on \(d_1\)\\
+		\(m_2\) = Prophet model trained on \(d_2\)\\
+		
+		\(P_1\) = predictions with \(m_1\)\\
+		\(P_2\) = predictions with \(m_2\)\\
+		\(C\) = actual observations\\
+		\(P\) = final predictions\\
+		
+		\(\widehat{x}\ = \begin{bmatrix}
+			a\\ 
+			b
+		\end{bmatrix} = \begin{bmatrix}
+			0\\ 
+			0
+		\end{bmatrix} \)\\
+
+		\(A = \begin{bmatrix}
+			P_1\\ 
+			P_2
+		\end{bmatrix}\)\\
+		Find \(\widehat{x}\) such that{
+			\(A^{T}A\widehat{x}  =  A^{T}C\)
+		}
+	
+		\(P\) = \(a P_{1} + b P_{2}\)\\
+		\caption{\textcolor{red}{Proposed Ensembling Procedure}}
+	\end{algorithm}
+	
+	
+	\section{Data Collection}\label{Sec_Data}
+	There is an unavailability of proper data regarding unemployment rate in India prior to 2016. Adequate data started to be gauged from 2016 onward by CMIE \cite{CMIE}, India. But this much amount of data is not adequate and sufficient for training statistical and machine learning models - they need good amount of data to learn patterns. So, we also referred to World Bank and the International Labor Organization (ILO) for the data. After data aggregation and cleaning, the data before 2016 was just for the financial years and not for specific months, so we synthetically generated data for months using forward interpolation. The curated data are all numerical floats and sequentially distributed in time-series fashion over a period of December 1991 to July 2020. This data is broken into two chunks - one stalled until December 2019 and the other taken until July 2020. The latter data contains in itself the pattern introduced as a consequence of COVID-19.
+	
+	\begin{table}[!h]
+		% increase table row spacing, adjust to taste
+		\renewcommand{\arraystretch}{1.3}
+		\caption{A snapshot of data.}
+		\label{data_snap}
+		\centering
+		\begin{tabular}{|c|c|}
+			\hline
+			\textbf{Date} & \textbf{Unemployment Rate}\\
+			\hline
+			1991-12-31 & 5.45\\
+			1992-12-31 & 5.50\\
+			1993-12-31 & 5.61\\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	\section{Results and Discussion}\label{Sec_Results}
+	The experimentation and inferencing involves three steps. In the first step, we run the time-series forecasting framework on two types of datasets that we have created. Thereafter, we model the results in the form of matrix equations, and then in the last step, we combine the results and optimize it by finding suitable parameters \(a\) and \(b\) using Least Squares Approximation (LSA). The LSA utilises the Levenberg-Marquardt Algorithm (LMA)\cite{LMA} underneath to find a vector approximation. 
+	
+	All the training and inferencing procedures were performed on Google's Colab Platform \cite{Colab} with CPU runtime powered by a single core, two threaded Intel Xeon processor and 12.72 GB of RAM.
+	
+	\subsection{ARIMA and its flavors}
+	The architecture that we had designed did not work well with ARIMA. ARIMA could not capture the sudden hike pattern present in the data that got introduced due to COVID. Seeing the inefficiency of ARIMA to pick up the trend in the data, we decided not to move forward with the ARIMA model. Though, SARIMAX could somehow learn the pattern, but still it was not capturing the non-stationarity of the data. Also, the Augmented Dickey-Fuller test \cite{DF-Test} showed weak evidence against null hypothesis of the data being non-stationary, indicating that time series has a unit root and it is non-stationary. So, a better model was required to capture this non-stationarity in the data, and Prophet was an obvious choice for such type of data.
+	
+%	\begin{figure}[!t]
+%		\centering
+%		\includegraphics[width=0.5\textwidth]{Figures/ARIMA_preds.pdf}
+%		\caption{Predictions on the existing timeframe with ARIMA.}
+%		\label{ARIMA_preds}
+%	\end{figure}
+%	
+%	\begin{figure}[!t]
+%		\centering
+%		\includegraphics[width=0.5\textwidth]{Figures/SARIMAX_Preds.pdf}
+%		\caption{Predictions on the existing timeframe with SARIMAX.}
+%		\label{SARIMAX_Preds}
+%	\end{figure}
+	
+	\textcolor{red}{Time series are stationary if they do not contain trend or seasonality in the data. Stationary time series is usually easier to model. We have considered that if 'p-value' is less than equals 0.05 then the data is stationary else it is non-stationary. In our experimentation, data proved to be non-stationary naively, and it stayed the same after first step of differencing as well. It is only after second iteration of differencing on the data, that it got to be stationary.}
+	
+	\begin{table}[h]
+		\caption{\textcolor{red}{Augmented Dickey Fuller Test results.}}
+		\label{ADF_tests}
+		\centering
+		\begin{tabular}{|l|l|l|}
+			\hline
+			\textbf{}                & \textbf{ADF Statistic} & \textbf{p-value} \\ \hline
+			\textbf{Naive}           & 1.614075               & 0.997899         \\ \hline
+			\textbf{After 1st diff.} & -0.4406437             & 0.903088         \\ \hline
+			\textbf{After 2nd diff.} & -4.0788587             & 0.001049459      \\ \hline
+		\end{tabular}
+	\end{table}
+
+
+	\subsection{\textcolor{red}{SVR}}
+	\textcolor{red}{Support Vector Regression or SVR did try to learn some trend from the data and was able to "nicely" fit on the existing data, but it was a completely different case with unseen data. The model seemed to not learn the intrinsic sudden trend from the dataset which was a consequence of COVID. SVR gave a static value for the entire unseen timeframe.}
+
+
+	\subsection{\textcolor{red}{VAR}}
+	\textcolor{red}{Vector Auto Regression (VAR) is a multivariate time series method. The model built through VAR represents, two or more time dependent variables that are linear combination of their respective past values as well as the past values of other variables present in the set.
+	Since our dataset is univariate having only one time dependent variable that is the unemployment rate of each month, considering this case VAR model cannot be built on this dataset. Therefore, the predictions through VAR model were not taken into consideration.}
+	
+	\subsection{\textcolor{red}{LSTM}}
+	\textcolor{red}{Long-Short Term Memory or LSTM performed better than SVR but still was not able to closely learn and fit the dataset. It learned the pattern behavior but was deviating in good numbers from the actual observations, resulting in a large mean squared error. }
+	
+
+	\subsection{\textcolor{red}{Prophet}}
+	\textcolor{red}{Prophet proved to be good model in the current research. The model not only learned the pattern in the data, but also was able to  pick up the anomalous trend that got introduced into the data as a consequence of COVID. It gave a mean squared error very close to the proposed model. Unsurprisingly, due to the high promising results of Prophet, it was chosen to build the ensemble model, acting as the prime algorithm in the proposed model.}
+	
+	
+	\subsection{\textcolor{red}{Proposed Model}}
+	As discussed in aforementioned sections, we train a model on two chunks of data, so as to accommodate the sudden hike in the data, which occurred as a consequence of COVID-19, heuristically. Our dataset contains records up till July 2020. Model 1 is trained on dataset from 1991 to 2019, and model 2 is trained on dataset from 1991 to July 2020. The second model takes into account the case of COVID-19 unusual trend in the data. The first model's data is available yearly, so as discussed earlier, we ran forward linear interpolation to generate monthly data.After this, we ran Prophet with seasonality mode as \emph{multiplicative} on both the datasets, and generated predictions for the time-frame ranging from December 2019 to November 2020. Thereafter, we combine the two predictions in three ways to obtain the best forecast pipeline, which not only takes into account the hike in the data but also smoothens out after the effect. The parameter set 1 outputted through the LSA proved to be the best hyperparameters for ensembling procedure.
+	
+	\begin{equation}
+		\label{data_ratios}
+		\begin{array}{l}
+			p = \frac{D1.length}{(D1.length + D2.length)}  \\
+			q = 1 - p  \\
+			where,\\
+			D1 \; is \; dataset \; 1 \; and \; D2 \; is \; dataset \; 2\\
+		\end{array}
+	\end{equation}
+	
+	Three parameters were created out of the variables outputted from the least squares approximation algorithm. These parameters as enlisted under Table \ref{params_table}, are generated by generating three different product combinations of the parameters \(a\) and \(b\) with \emph{data ratio} parameters \(p\) and \(q\) as is shown by Equation \ref{eq_params}. The data ratios  are the ratio of the timeline length of the two sets of data on which two different models are being trained.
+	
+	\begin{equation}
+		\label{eq_params}
+		\begin{array}{l}
+			a, b = p, q \\
+			a_1, b_1 = a\times p, \; b\times q \\
+			a_2, b_2 = a\times q, \; b\times p \\
+		\end{array}
+	\end{equation}
+	
+	
+	\begin{table}[!t]
+		% increase table row spacing, adjust to taste
+		\renewcommand{\arraystretch}{1.3}
+		\caption{Parameters used in our heuristic for Prophet model.}
+		\label{params_table}
+		\centering
+		\begin{tabular}{|c||c|c|}
+			\hline
+			\textbf{Parameter} & \textbf{\(var_1\)} & \textbf{\(var_2\)}\\
+			\hline
+			Parameter 1 & -0.1113 & 1.1055\\
+			Parameter 2 & -0.0547 & 0.5616\\
+			Parameter 3 & -0.0565 & 0.5438\\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	Thereafter, predictions from two models are combined as \(var_1 \times P1 + var_2 \times P2\), and three different sets of results are obtained. These results are generated as per our heuristic, and we choose the pair of parameters that show the least deviation from the actual data. First we checked the three different models on existing data to see how much they are affected by the sudden hike in the data. From Table \ref{model_errors}, it is clearly indicated that model with parameter set 1 undoubtedly gave the least MSE as compared to proposed model with other two sets of parameters. 
+	
+%	\begin{figure}[!t]
+%		\centering
+%		\includegraphics[width=0.5\textwidth]{Figures/LSA_Preds_params1.pdf}
+%		\caption{Predictions on the known timeframe with Prophet and parameter 1.}
+%		\label{LSA_Preds_params1}
+%	\end{figure}
+%	
+%	\begin{figure}[!t]
+%		\centering
+%		\includegraphics[width=0.5\textwidth]{Figures/LSA_Preds_params2.pdf}
+%		\caption{Predictions on the known timeframe with Prophet and parameter 2.}
+%		\label{LSA_Preds_params2}
+%	\end{figure}
+%	
+%	\begin{figure}[!t]
+%		\centering
+%		\includegraphics[width=0.5\textwidth]{Figures/LSA_Preds_params3.pdf}
+%		\caption{Predictions on the known timeframe with Prophet and parameter 3.}
+%		\label{LSA_Preds_params3}
+%	\end{figure}
+	
+	After checking the pattern followed by the models, we then use our model architecture heuristically combined with three parameters to predict on the future timeframe, that is from December 2020 to December 2021. The results are elucidated in Table \ref{Prophet_results}. Model with parameter 1 uses vanilla parameters obtained from the Least Squares Approximation algorithm which does seem to give results close to prevailing in the future timeframe. The other two heuristic's parameters seem to give somewhat constant results. After comparing these with the current ongoing data, we conclude that the parameter 1 combination gives the best result.
+	
+	%\begin{figure}[!t]
+	%	\centering
+	%	\includegraphics[width=0.5\textwidth]{Figures/Preds_v1.pdf}
+	%	\caption{Predictions on the future timeframe with Prophet and parameter 1.}
+	%	\label{Preds_v1}
+	%\end{figure}
+	%
+	%\begin{figure}[!t]
+	%	\centering
+	%	\includegraphics[width=0.5\textwidth]{Figures/Preds_v2.pdf}
+	%	\caption{Predictions on the future timeframe with Prophet and parameter 2.}
+	%	\label{Preds_v2}
+	%\end{figure}
+	%
+	%\begin{figure}[!t]
+	%	\centering
+	%	\includegraphics[width=0.5\textwidth]{Figures/Preds_v3.pdf}
+	%	\caption{Predictions on the future timeframe with Prophet and parameter 3.}
+	%	\label{Preds_v3}
+	%\end{figure}
+	
+	\begin{table*}[t]
+		% increase table row spacing, adjust to taste
+		\renewcommand{\arraystretch}{1.1}
+		\caption{\textcolor{red}{Predictions from our architecture on future timeframe between December 2020 to December 2021. Note: \(\hat{y_i}\) is prediction of our architecture with Prophet combined using parameter set \(i\) obtained through products between parameters of Least Squares Approximation and data timeline length ratios. \(y\) are the actual values.}}
+		\label{Prophet_results}
+		\centering
+		\resizebox{\textwidth}{!}{%
+			\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+				\hline
+				\textbf{Date} & \textbf{ARIMA} & \textbf{SARIMAX} & \textbf{FARIMA} & \textbf{Prophet} & \textbf{LSTM} & \textbf{SVR} & \textbf{OurModel\_v1} & \textbf{Original} \\ \hline
+				31-12-2020    & 0.006253943    & 5.84628349       & 0.00032         & 8.224258194      & 6.69770336    & 5.95513196   & 8.640207528           & 9.06              \\ \hline
+				31-01-2021    & 0.006253943    & 5.84413569       & 0.00032         & 8.258314         & 6.65783834    & 5.95513196   & 8.25116545            & 6.53              \\ \hline
+				28-02-2021    & 0.006253943    & 5.84198216       & 0.00032         & 8.400294         & 6.62567425    & 5.95513196   & 8.481464476           & 6.9               \\ \hline
+				31-03-2021    & 0.006253943    & 5.83983035       & 0.00032         & 8.451511         & 6.59982109    & 5.95513196   & 8.476194446           & 6.52              \\ \hline
+				30-04-2021    & 0.006253943    & 5.83767802       & 0.00032         & 9.912066         & 6.57908773    & 5.95513196   & 8.960494696           & 7.6               \\ \hline
+				31-05-2021    & 0.006253943    & 5.83552584       & 0.00032         & 9.982879         & 6.56251287    & 5.95513196   & 10.0309883            & 11.9              \\ \hline
+				30-06-2021    & 0.006253943    & 5.83337362       & 0.00032         & 8.702785         & 6.5493412     & 5.95513196   & 8.944588417           & 9.17              \\ \hline
+				31-07-2021    & 0.006253943    & 5.83122141       & 0.00032         & 8.357237         & 6.5389123     & 5.95513196   & 8.346565911           & 6.95              \\ \hline
+				31-08-2021    & 0.006253943    & 5.8341751        & 0.00032         & 8.741857         & 6.5306673     & 5.95513196   & 8.775966624           & -                 \\ \hline
+				30-09-2021    & 0.006253943    & 5.8395353        & 0.00032         & 8.806436         & 6.52416897    & 5.95513196   & 8.84478304            & -                 \\ \hline
+				31-10-2021    & 0.006253943    & 5.84417697       & 0.00032         & 8.879696         & 6.5190649     & 5.95513196   & 8.908858116           & -                 \\ \hline
+				30-11-2021    & 0.006253943    & 5.84903212       & 0.00032         & 8.807276         & 6.51506186    & 5.95513196   & 8.832977156           & -                 \\ \hline
+				31-12-2021    & 0.006253943    & 5.85382732       & 0.00032         & 8.822732         & 6.51192904    & 5.95513196   & 8.905556792           & -                 \\ \hline
+			\end{tabular}}
+	\end{table*}
+	
+	
+	\section{Comparative Analysis}\label{Sec_Comp}
+	\subsection{Advantages over Other Vanilla Models}
+	As shown in section \ref{Sec_Results}, the vanilla models (except Prophet) could not correctly learn the pattern in the data. They were either over-hyped due to the sudden COVID-19 hike or they were just not being effected by this anomalous trend in the data. Likewise, ARIMA, FARIMA, LSTM and SVR could not learn the pattern , while SARIMA did try to learn and adjust to the pattern in the data, it still was unable to address the non-stationarity property that is present in the data, it just predicted strictly increasing linear model that was not good, since in future normal scenarios are bound to return and the predictions should not shoot up in those timeframes, rather they should become akin to the trend that was followed prior to the anomalous COVID-19 sudden pattern. As can be illustrated by Table \ref{Prophet_results}, the predictions are hiked in case where COVID-19 pattern is present, and strictly decreases when this anomalous pattern is absent. 
+	
+	\begin{table*}
+		\renewcommand{\arraystretch}{1.1}
+		\caption{\textcolor{red}{Mean Squared Error of different models from the Actual observations.}}
+		\label{model_errors}
+		\resizebox{\textwidth}{!}{%
+			\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+				\hline
+				\textbf{Date}               & \textbf{ARIMA\_error} & \textbf{SARIMAX\_error} & \textbf{FARIMA\_error} & \textbf{Prophet\_error} & \textbf{LSTM\_error} & \textbf{SVR\_error} & \textbf{v1\_error}   & \textbf{v2\_error} & \textbf{v3\_error} \\ \hline
+				31-12-2020                  & 81.97                 & 10.33                   & 82.08                  & 0.698464366             & 5.580445415          & 9.64                & 0.18                 & 23.25              & 24.74              \\ \hline
+				31-01-2021                  & 42.56                 & 0.47                    & 42.64                  & 2.987069283             & 0.016342641          & 0.33                & 2.96                 & 5.67               & 6.41               \\ \hline
+				28-02-2021                  & 47.52                 & 1.12                    & 47.61                  & 2.250882086             & 0.075254617          & 0.89                & 2.50                 & 7.06               & 7.90               \\ \hline
+				31-03-2021                  & 42.43                 & 0.46                    & 42.51                  & 3.730734743             & 0.006371406          & 0.32                & 3.83                 & 5.16               & 5.88               \\ \hline
+				30-04-2021                  & 57.66                 & 3.11                    & 57.76                  & 5.345649188             & 1.042261863          & 2.71                & 1.85                 & 8.81               & 9.82               \\ \hline
+				31-05-2021                  & 141.46                & 36.78                   & 141.60                 & 3.675352929             & 28.48876886          & 35.34               & 3.49                 & 52.59              & 55.01              \\ \hline
+				30-06-2021                  & 83.97                 & 11.13                   & 84.08                  & 0.218289856             & 6.867852546          & 10.34               & 0.05                 & 23.39              & 24.91              \\ \hline
+				31-07-2021                  & 48.22                 & 1.25                    & 48.30                  & 1.980315974             & 0.168993097          & 0.99                & 1.95                 & 7.31               & 8.16               \\ \hline
+				&                       &                         &                        &                         &                      &                     &                      &                    &                    \\ \hline
+				\textbf{Mean Squared Error} & 68.22477853           & 8.081097861             & 68.3206172             & 2.610844803             & 5.280786306          & 7.569339517         & \textbf{2.101465013} & 16.65577363        & 17.8516135         \\ \hline
+			\end{tabular}%
+		}
+	\end{table*}
+	
+	
+	\textcolor{red}{It can be observed that vanilla models could not learn the non-stationarity of the data properly. Even Prophet could also not learn this property because it was built to gauge seasonality and here in our data the unusual trend just comes for once, so it is not able to pick it up efficiently. Nevertheless, our proposed architecture is able to counteract this issue, and is successfully able to respond to the sudden COVID-19 pattern and also normalize itself thereafter in post-pandemic timeframe. As can be clearly observed from the plots in Figure \ref{Model_res} and Table \ref{Prophet_results}, only Prophet and the proposed model's version 1 are able to perform best and give the best results. Comparing both, the proposed model wins, as can be inferred from the Mean Squared Error (MSE) of the models from the Table \ref{model_errors}.}
+	
+
+	\begin{figure}[!t]
+		\centering
+		\includegraphics[width=0.5\textwidth]{Figures/Model_results.png}
+		\caption{\textcolor{red}{Visual representation of table \ref{Prophet_results}. Data after July 2021 is not available.}}
+		\label{Model_res}
+	\end{figure}
+
+	\subsection{Comparison with Existing Researches}
+	With the onset of COVID-19, many researches erupted in the academia, but they were mainly concerned with predicting the number of cases or in the pharmacological domain in finding new drugs for its treatment. Very few researches have been carried out to forecast the financial parameters of the nation. Unemployment rate is a deciding parameter in a nation's economy since it indirectly affects many spheres of the nation. With lockdowns being implemented, many people are at their homes out of which many lost their jobs, and this effect is apparent from the data. The researches that were carried out for forecasting unemployment rate in India utilized vanilla time-series forecasting frameworks, and the study did show that these vanilla models did not worked out well on the data. Since, the data contains a single anomalous trend, even the Prophet model could not learn this property from the data since this trend is not seasonal in nature. The current study proposes a novel architecture to deal with these rare unusual trends by combining two models one learning normal usual patterns and the other getting trained on usual as well as rare anomalous patterns. 
+	
+	
+	\section{Conclusion}\label{Sec_Final}
+	The COVID-19 pandemic adversely influenced and disturbed all the phases of human lives. The number of cases in India has crossed an enormous point of 1.44 millions surpassing Russia and is now third on the list, just behind USA and Brazil. An alarming situation has engulfed whole of the country with many places identified as Containment and Red zones. The search for the cure for this disease is surging high but in due time countries are helpless. They are forced to bow before this pandemic and observe series of lockdowns and social distancing rules. Though these measures are ensuring safety of individuals, they are on the other hand, ruining country's economy. With minimization in the number of buyers and sellers, India's economy is experiencing a sudden setback which is not easy to get out of. Consequently, it is adversely affecting the employment situation in India. On the brighter side, with students and professionals at their home, job aspirants are getting umpteen hours to train themselves. Various investments of foreign companies and industries are undergoing in India currently. With India being the largest hub of young minds, the times post pandemic may be fruitful for the country and may bring bouquets of employment opportunities and thereby help in reinstating the dwindling economy. 
+	
+	The current study aimed at predicting the conditions that may be prevalent in post-pandemic India in the next year. The work proposes a novel architecture for financial forecasting. This architecture proved to be robust against sudden unusual hikes in the data pattern. While vanilla time-series forecasting models could not perform somewhere close to the actual data points, our heuristic-based model performed very closely to the actual forecasted values. This architecture could be utilised in various other paradigms of financial forecasting. The main issue with forecasting unemployment rate in India is the unavailability of proper and adequate data, but this study also dealt with that by combining data from various sources and generating monthly data synthetically using interpolation technique.
+	
+
+	\section{\textcolor{red}{Future Scope}}\label{Sec_Future}
+	\textcolor{red}{The current paper discussed a novel time-series forecasting approach that helps deal with two inherent issues that existed with the unemployment rate forecasting related problem domain, which are, unavailability of adequate data and sudden non-seasonal trend due to the COVID wave. The paper stands successful in addressing these two issues. By ensembling and optimizing the predictions produced by two models trained on separate time-series data produces a significant improvement over the vanilla time series forecasting algorithms. Further research can be conducted to make the ensemble procedure less error prone. The data before year 2016 can be interpolated by other means other than Newton's method that has been utilized in the current research, that might make the data more reliable and increase its information content. The proposed procedure proved to be good in unemployment rate forecasting, other than this specific application, the procedure can be utilized in other domains where normal vanilla models does not produce significantly good results.}
+	
+	\begin{thebibliography}{1}
+		
+		\bibitem{MOHFW}
+		"Home | Ministry of Health and Family Welfare | GOI". mohfw.gov.in. Retrieved 4 July 2020.
+		
+		\bibitem{Sengupta}
+		Sengupta, Sohini, Sareeta Mugde, and Garima Sharma. "Covid-19 pandemic data analysis and forecasting using machine learning algorithms." medRxiv (2020). doi: https://doi.org/10.1101/2020.06.25.20140004
+		
+		\bibitem{Gupta}
+		Gupta, Rajan, and Saibal Kumar Pal. "Trend Analysis and Forecasting of COVID-19 outbreak in India." medRxiv (2020). doi: https://doi.org/10.1101/2020.03.26.20044511
+		
+		\bibitem{Poddar}
+		Poddar and Yadav. “Impact of COVID-19 on Indian Economy- A Review” Journal of Humanities and Social Sciences Research, Horizon Journals (2020). doi: https://doi.org/10.37534/bp.jhssr.2020.v2.nS.id1033.p15
+		
+		\bibitem{Paul}
+		Paul, Dhritabrata. (2020). “Covid 19 Impact on Indian economy”. doi: 10.13140/RG.2.2.27275.23846.
+		
+		\bibitem{Katris}
+		Katris, C. “Prediction of Unemployment Rates with Time Series and Machine Learning Techniques”. Comput Econ 55, 673–706 (2020). https://doi.org/10.1007/s10614-019-09908-9
+		
+		\bibitem{Javed}
+		Meron, D. “Modeling and Forecasting Unemployment Rate in Sweden using various Econometric Measures”. Diss. M. SC. Thesis, Örebro University School of Business, Department of Applied Statistics, \url{https://www. diva-portal.org/smash/get/diva2:949512/FULLTEXT01.pdf}, 59-68, 2016.
+		
+		\bibitem{Fajar}
+		Fajar, Muhammad and Prasetyo, Octavia Rizky and Nonalisa, Septiarida and Wahyudi, Wahyudi (2020): Forecasting unemployment rate in the time of COVID-19 pandemic using Google trends data (case of Indonesia). Published in: International Journal of Scientific Research in Multidisciplinary Studies , Vol. 6, No. 11 (30 November 2020): pp. 29-33.
+		
+		\bibitem{Vikas}
+		Barbate V, Gade RN, Raibagkar SS. COVID-19 and Its Impact on the Indian Economy. Vision. 2021;25(1):23-35. doi:10.1177/0972262921989126
+		
+		\bibitem{Khem}
+		Chand, Khem \& Tiwari, Rajesh \& Phuyal, Manish. (2018). Economic Growth and Unemployment Rate: An Empirical Study of Indian Economy. PRAGATI : Journal of Indian Economy. 4. 10.17492/pragati.v4i02.11468. 
+		
+		\bibitem{Dumicic}
+		Dumičić, Ksenija. (2015). Developing Forecasting Models for Unemployment Rate by Gender: Cross Countries Comparison. 
+		
+		\bibitem{CMIE}
+		Centre for Monitoring Indian Economy Pvt. Ltd. https://www.cmie.com/
+		
+		\bibitem{LMA}
+		J. J. More, “The Levenberg-Marquardt Algorithm: Implementation and Theory,” Numerical Analysis, ed. G. A. Watson, Lecture Notes in Mathematics 630, Springer Verlag, pp. 105-116, 1977.
+		
+		\bibitem{Colab}
+		Bisong E. (2019) Google Colaboratory. In: Building Machine Learning and Deep Learning Models on Google Cloud Platform. Apress, Berkeley, CA. https://doi.org/10.1007/978-1-4842-4470-8\_7
+		
+		\bibitem{SARIMA}
+		Hyndman, Rob J; Athanasopoulos, George. 8.9 Seasonal ARIMA models. Forecasting: principles and practice. oTexts. Retrieved 19 May 2015.
+		
+		\bibitem{DF-Test}
+		David A. Dickey \& Wayne A. Fuller (1979) Distribution of the Estimators for Autoregressive Time Series with a Unit Root, Journal of the American Statistical Association, 74:366a, 427-431, DOI: 10.1080/01621459.1979.10482531
+		
+		\bibitem{Prophet}
+		Prophet: Forecasting at scale. Facebook Open Source. https://facebook.github.io/prophet/
+		
+		\bibitem{Chirag}
+		\textcolor{red}{Deb, Chirag, et al. "A review on time series forecasting techniques for building energy consumption." Renewable and Sustainable Energy Reviews 74 (2017): 902-924.}
+		
+		\bibitem{Nguyen}
+		\textcolor{red}{Nguyen, Hieu M., Philip J. Turk, and Andrew D. McWilliams. "Forecasting COVID-19 Hospital Census: A Multivariate Time-Series Model Based on Local Infection Incidence." JMIR Public Health and Surveillance 7.8 (2021): e28195.}
+		
+		\bibitem{Sonali}
+		\textcolor{red}{Shankar, Sonali, et al. "Forecasting container throughput with long short-term memory networks." Industrial management \& data systems (2019).}
+		
+	\end{thebibliography}
+	
+	
+\end{document}
+
+%%

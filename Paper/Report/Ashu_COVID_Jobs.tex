@@ -1,0 +1,988 @@
+
+%% bare_jrnl_compsoc.tex
+%% V1.4b
+%% 2015/08/26
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
+%% Computer Society journal paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. The IEEE's font choices and paper sizes can   ***
+% *** trigger bugs that do not appear when using other class files.       ***                          ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+\documentclass[10pt,journal,compsoc]{IEEEtran}
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[10pt,journal,compsoc]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/pkg/ifpdf
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+\ifCLASSOPTIONcompsoc
+  % IEEE Computer Society needs nocompress option
+  % requires cite.sty v4.0 or later (November 2003)
+  \usepackage[nocompress]{cite}
+\else
+  % normal IEEE
+  \usepackage{cite}
+\fi
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of the IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off
+% such as if a citation ever needs to be enclosed in parenthesis.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 5.0 (2009-03-20) and later if using hyperref.sty.
+% The latest version can be obtained at:
+% http://www.ctan.org/pkg/cite
+% The documentation is contained in the cite.sty file itself.
+%
+% Note that some packages require special options to format as the Computer
+% Society requires. In particular, Computer Society  papers do not use
+% compressed citation ranges as is done in typical IEEE papers
+% (e.g., [1]-[4]). Instead, they list every citation separately in order
+% (e.g., [1], [2], [3], [4]). To get the latter we need to load the cite
+% package with the nocompress option which is supported by cite.sty v4.0
+% and later. Note also the use of a CLASSOPTION conditional provided by
+% IEEEtran.cls V1.7 and later.
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at: 
+% http://www.ctan.org/pkg/graphicx
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/pkg/epslatex
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics.
+%
+% Note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/amsmath
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as the IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/pkg/algorithms
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/pkg/algorithmicx
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/array
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\ifCLASSOPTIONcompsoc
+%  \usepackage[caption=false,font=footnotesize,labelfont=sf,textfont=sf]{subfig}
+%\else
+%  \usepackage[caption=false,font=footnotesize]{subfig}
+%\fi
+% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
+% for subfigure.sty, the latter of which is no longer maintained and is
+% incompatible with some LaTeX packages including fixltx2e. However,
+% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
+% which will override IEEEtran.cls' handling of captions and this will result
+% in non-IEEE style figure/table captions. To prevent this problem, be sure
+% and invoke subfig.sty's "caption=false" package option (available since
+% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
+% handling of captions.
+% Note that the Computer Society format requires a sans serif font rather
+% than the serif font used in traditional IEEE formatting and thus the need
+% to invoke different subfig.sty package options depending on whether
+% compsoc mode has been enabled.
+%
+% The latest version and documentation of subfig.sty can be obtained at:
+% http://www.ctan.org/pkg/subfig
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure.
+% Be aware that LaTeX2e kernels dated 2015 and later have fixltx2e.sty's
+% corrections already built into the system in which case a warning will
+% be issued if an attempt is made to load fixltx2e.sty as it is no longer
+% needed.
+% The latest version and documentation can be found at:
+% http://www.ctan.org/pkg/fixltx2e
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/stfloats
+% Do not use the stfloats baselinefloat ability as the IEEE does not allow
+% \baselineskip to stretch. Authors submitting work to the IEEE should note
+% that the IEEE rarely uses double column equations and that authors should try
+% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
+% packages (also by Sigitas Tolusis) as the IEEE does not format its papers in
+% such ways.
+% Do not attempt to use stfloats with fixltx2e as they are incompatible.
+% Instead, use Morten Hogholm'a dblfloatfix which combines the features
+% of both fixltx2e and stfloats:
+%
+% \usepackage{dblfloatfix}
+% The latest version can be found at:
+% http://www.ctan.org/pkg/dblfloatfix
+
+
+
+
+%\ifCLASSOPTIONcaptionsoff
+%  \usepackage[nomarkers]{endfloat}
+% \let\MYoriglatexcaption\caption
+% \renewcommand{\caption}[2][\relax]{\MYoriglatexcaption[#2]{#2}}
+%\fi
+% endfloat.sty was written by James Darrell McCauley, Jeff Goldberg and 
+% Axel Sommerfeldt. This package may be useful when used in conjunction with 
+% IEEEtran.cls'  captionsoff option. Some IEEE journals/societies require that
+% submissions have lists of figures/tables at the end of the paper and that
+% figures/tables without any captions are placed on a page by themselves at
+% the end of the document. If needed, the draftcls IEEEtran class option or
+% \CLASSINPUTbaselinestretch interface can be used to increase the line
+% spacing as well. Be sure and use the nomarkers option of endfloat to
+% prevent endfloat from "marking" where the figures would have been placed
+% in the text. The two hack lines of code above are a slight modification of
+% that suggested by in the endfloat docs (section 8.4.1) to ensure that
+% the full captions always appear in the list of figures/tables - even if
+% the user used the short optional argument of \caption[]{}.
+% IEEE papers do not typically make use of \caption[]'s optional argument,
+% so this should not be an issue. A similar trick can be used to disable
+% captions of packages such as subfig.sty that lack options to turn off
+% the subcaptions:
+% For subfig.sty:
+% \let\MYorigsubfloat\subfloat
+% \renewcommand{\subfloat}[2][\relax]{\MYorigsubfloat[]{#2}}
+% However, the above trick will not work if both optional arguments of
+% the \subfloat command are used. Furthermore, there needs to be a
+% description of each subfigure *somewhere* and endfloat does not add
+% subfigure captions to its list of figures. Thus, the best approach is to
+% avoid the use of subfigure captions (many IEEE journals avoid them anyway)
+% and instead reference/explain all the subfigures within the main caption.
+% The latest version of endfloat.sty and its documentation can obtained at:
+% http://www.ctan.org/pkg/endfloat
+%
+% The IEEEtran \ifCLASSOPTIONcaptionsoff conditional can also be used
+% later in the document, say, to conditionally put the References on a 
+% page by themselves.
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/url
+% Basically, \url{my_url_here}.
+
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+\usepackage{scalerel}
+\usepackage{tikz}
+\usetikzlibrary{svg.path}
+\usepackage{subfig}
+\usepackage{array}
+\usepackage{tabularx,booktabs}
+\usepackage{longtable}
+\usepackage{float}
+
+\definecolor{orcidlogocol}{HTML}{A6CE39}
+\tikzset{
+	orcidlogo/.pic={
+		\fill[orcidlogocol] svg{M256,128c0,70.7-57.3,128-128,128C57.3,256,0,198.7,0,128C0,57.3,57.3,0,128,0C198.7,0,256,57.3,256,128z};
+		\fill[white] svg{M86.3,186.2H70.9V79.1h15.4v48.4V186.2z}
+		svg{M108.9,79.1h41.6c39.6,0,57,28.3,57,53.6c0,27.5-21.5,53.6-56.8,53.6h-41.8V79.1z M124.3,172.4h24.5c34.9,0,42.9-26.5,42.9-39.7c0-21.5-13.7-39.7-43.7-39.7h-23.7V172.4z}
+		svg{M88.7,56.8c0,5.5-4.5,10.1-10.1,10.1c-5.6,0-10.1-4.6-10.1-10.1c0-5.6,4.5-10.1,10.1-10.1C84.2,46.7,88.7,51.3,88.7,56.8z};
+	}
+}
+
+\newcommand\orcidicon[1]{\href{https://orcid.org/#1}{\mbox{\scalerel*{
+				\begin{tikzpicture}[yscale=-1,transform shape]
+				\pic{orcidlogo};
+				\end{tikzpicture}
+			}{|}}}}
+
+\usepackage[hidelinks]{hyperref} %<--- Load after everything else
+
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+%
+% paper title
+% Titles are generally capitalized except for words such as a, an, and, as,
+% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+% not capitalized unless they are the first or last word of the title.
+% Linebreaks \\ can be used within to get better formatting as desired.
+% Do not put math or special symbols in the title.
+\title{Prognosticating the effect on Unemployment rate in the post-pandemic India via Time-Series Forecasting and Least Squares Approximation}
+%
+%
+% author names and IEEE memberships
+% note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
+% a structure at a ~ so this keeps an author's name from being broken across
+% two lines.
+% use \thanks{} to gain access to the first footnote area
+% a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
+% was not built to handle multiple paragraphs
+%
+%
+%\IEEEcompsocitemizethanks is a special \thanks that produces the bulleted
+% lists the Computer Society journals use for "first footnote" author
+% affiliations. Use \IEEEcompsocthanksitem which works much like \item
+% for each affiliation group. When not in compsoc mode,
+% \IEEEcompsocitemizethanks becomes like \thanks and
+% \IEEEcompsocthanksitem becomes a line break with idention. This
+% facilitates dual compilation, although admittedly the differences in the
+% desired content of \author between the different types of papers makes a
+% one-size-fits-all approach a daunting prospect. For instance, compsoc 
+% journal papers have the author affiliations above the "Manuscript
+% received ..."  text while in non-compsoc journals this is reversed. Sigh.
+
+\author{Ashutosh~Agrahari\textsuperscript{\orcidicon{0000-0002-0692-4883}},
+		Ankur~Veer,
+		Anshuman~Singh,
+        Pawan~Singh\textsuperscript{\orcidicon{0000-0002-1342-9493}},~\IEEEmembership{Member,~IEEE Computational Intelligence Society},
+        Baseem~Khan\textsuperscript{\orcidicon{0000-0002-5082-8311}},~\IEEEmembership{Member,~IEEE}
+        %Hassan~Haes~Alhelou\textsuperscript{\orcidicon{0000-0002-7427-2848}},~\IEEEmembership{Member,~IEEE},
+        %and~Pierluigi~Siano\textsuperscript{\orcidicon{0000-0002-0975-0241}},~\IEEEmembership{Senior~Member,~IEEE}% <-this % stops a space
+\IEEEcompsocitemizethanks{
+	\IEEEcompsocthanksitem A. Agrahari, A. Veer, A. Singh and P. Singh are with the Department
+	of Computer Science and Engineering, Amity University, Lucknow,
+	India.\protect\\E-mail: ashutoshmathsgenius@gmail.com, ankurveer011@gmail.com, singhanshuman.999@gmail.com, pawansingh51279@gmail.com
+	
+	\IEEEcompsocthanksitem B. Khan is with the Department of Electrical and Computer Engineering, Hawassa University, Hawassa P.O. Box 05, Ethiopia.\protect\\E-mail: baseem.khan04@gmail.com	
+	
+	%\IEEEcompsocthanksitem H. H. Alhelou is with the Department of Electrical Power Engineering, Faculty of Mechanical and Electrical Engineering, Tishreen
+	%University, 2230 Lattakia, Syria.\protect\\Email: h.haesalhelou@gmail.com
+	
+	%\IEEEcompsocthanksitem P. Siano is with the Department of Management \& Innovation Systems, University of Salerno, 84084 Salerno, Italy.\protect\\Email: psiano@unisa.it, Tel.: +39-089-96-4294
+}% <-this % stops an unwanted space
+\thanks{Manuscript received Month XX, 20XX; revised Month XX, 202X.}}
+
+% note the % following the last \IEEEmembership and also \thanks - 
+% these prevent an unwanted space from occurring between the last author name
+% and the end of the author line. i.e., if you had this:
+% 
+% \author{....lastname \thanks{...} \thanks{...} }
+%                     ^------------^------------^----Do not want these spaces!
+%
+% a space would be appended to the last name and could cause every name on that
+% line to be shifted left slightly. This is one of those "LaTeX things". For
+% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
+% "AB" then you have to do: "\textbf{A}\textbf{B}"
+% \thanks is no different in this regard, so shield the last } of each \thanks
+% that ends a line with a % and do not let a space in before the next \thanks.
+% Spaces after \IEEEmembership other than the last one are OK (and needed) as
+% you are supposed to have spaces between the names. For what it is worth,
+% this is a minor point as most people would not even notice if the said evil
+% space somehow managed to creep in.
+
+
+
+% The paper headers
+\markboth{IEEE Transactions on Pattern Analysis and Machine Intelligence;,~Vol.~XX, No.~XX, Month~202X}%
+{Agrahari \MakeLowercase{\textit{et al.}}: Prognosticating the effect on Unemployment rate in the post-pandemic India via Time-Series Forecasting and Least Squares Approximation}
+% The only time the second header will appear is for the odd numbered pages
+% after the title page when using the twoside option.
+% 
+% *** Note that you probably will NOT want to include the author's ***
+% *** name in the headers of peer review papers.                   ***
+% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
+% you desire.
+
+
+
+% The publisher's ID mark at the bottom of the page is less important with
+% Computer Society journal papers as those publications place the marks
+% outside of the main text columns and, therefore, unlike regular IEEE
+% journals, the available text space is not reduced by their presence.
+% If you want to put a publisher's ID mark on the page you can do it like
+% this:
+%\IEEEpubid{0000--0000/00\$00.00~\copyright~2015 IEEE}
+% or like this to get the Computer Society new two part style.
+%\IEEEpubid{\makebox[\columnwidth]{\hfill 0000--0000/00/\$00.00~\copyright~2015 IEEE}%
+%\hspace{\columnsep}\makebox[\columnwidth]{Published by the IEEE Computer Society\hfill}}
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark (Computer Society jorunal
+% papers don't need this extra clearance.)
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+% for Computer Society papers, we must declare the abstract and index terms
+% PRIOR to the title within the \IEEEtitleabstractindextext IEEEtran
+% command as these need to go into the title area created by \maketitle.
+% As a general rule, do not put math, special symbols or citations
+% in the abstract or keywords.
+\IEEEtitleabstractindextext{%
+\begin{abstract}
+The COVID-19 pandemic adversely influenced and disturbed all the phases of human lives. The number of cases in India has crossed an enormous point of 1.44 millions surpassing Russia and is now third on the list, just behind USA and Brazil. An alarming situation has engulfed whole of the country with many places identified as Containment and Red zones. The search for the cure for this disease is surging high but in due time countries are helpless. They are forced to bow before this pandemic and observe series of lockdowns and social distancing rules. Though these measure are ensuring safety of individuals, they are on the other hand, ruining country's economy. With minimisation in the number of buyers and sellers, India's economy is experiencing a sudden setback which is not easy to get out of. Consequently, it is adversely affecting the employment situation in India. On the brighter side, with students and professionals at their home, job aspirants are getting upteen hours to train themselves. Various investments of foreign companies and industries are undergoing in India currently. With India being the largest hub of young minds, the times post pandemic may be fruitful for the country and may bring bouquets of employment opportunities and thereby help in reinstating the dwindling economy. The current paper aims to analytically visualise these future outcomes that the post-pandemic India might have in store for its citizens. We used time series forecasting on various collected data and combined the statistics of economics-deciding parameters to forecast the trends that might be prevalent in the next 2 years. We also present a thorough analysis of our findings by utilizing paradigms of statistics, economics and machine learning.
+\end{abstract}
+
+% Note that keywords are not normally used for peerreview papers.
+\begin{IEEEkeywords}
+Coronavirus, COVID-19, unemployment, time-series forecasting, Prophet, Least squares approximation, vector approximation
+\end{IEEEkeywords}}
+
+
+% make the title area
+\maketitle
+
+
+% To allow for easy dual compilation without having to reenter the
+% abstract/keywords data, the \IEEEtitleabstractindextext text will
+% not be used in maketitle, but will appear (i.e., to be "transported")
+% here as \IEEEdisplaynontitleabstractindextext when the compsoc 
+% or transmag modes are not selected <OR> if conference mode is selected 
+% - because all conference papers position the abstract like regular
+% papers do.
+\IEEEdisplaynontitleabstractindextext
+% \IEEEdisplaynontitleabstractindextext has no effect when using
+% compsoc or transmag under a non-conference mode.
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+
+\IEEEraisesectionheading{\section{Introduction}\label{sec:introduction}}
+\IEEEPARstart{T}{he} COVID-19 pandemic has hit the world very harshly. India has now become a hotspot of this pandemic after the USA and Brazil, after surpassing Russia in the number of cases, and is soon to enter stage 3 considering fatality rate. The countries are helpless before this natural phenomenon and are forced to implement lockdowns to prevent its spread. As is evident from many other historical pandemics and epidemics in various parts of the world, there has always been a great deal of adverse effects on the economic conditions of the country or the world as a whole. Consequently, due to lockdowns, trading and working in the industries is stalled which in turn leads to loss of jobs of numerous employees. The employers are then not in the position to support themselves and thereby many companies and industries get shut down. Since industries run a country's economy, and with the industries shutting down or getting in loss, the economy of the entire country gets disrupted. A disease outbreak, being at the scale of the world, affects the entire world. Since most countries are connected through trade and commerce, the pandemic can lead to utter loss of jobs and economy of nations.
+
+The COVID-19 disease has been growing steadily at an exponential rate throughout the world. Since its inception, it has disrupted various sectors of human life including business, health, education and governance. As of July 20, 2020 the number of cases is 14,360,451, out of which 603,285 have lost their life while 8,071,937 have recovered. The economies have been adversely affected and their GDP (Gross Domestic Product) is following a negative slope in today's scenarios. In India, due to sequence of lockdowns, menial laborers have lost their daily-wage jobs, and are left with nothing to sustain in this pandemic-affected economy, and hence many have died not due to the disease but of scarcity of money to support one's family. This is a very arduous situation in the country, and its citizens must not leave hope. Government has been doing its best to control this pandemic. It has taken many initiatives and cut down the cost of COVID-19 tests by half, but still the situation in the country is not under control and is surging high. 
+
+The unemployment rate in India had been swinging closely to around 2.7\% in previous years but has been exaggerated to an astonishing 15\% average during this pandemic, specially between March and May. The rules of social distancing and lockdown has added more to disruption rate of dwindling unemployment rate and consequently on the overall economy of the country. Apart from studying the effects of the pandemic on unemployment rate, inflation rate and economy growth rate, the paper also analyses the consequences of up-skilling at home, on academia and corporate world.  We run time-series forecasting on the collected data, and present our findings through comprehensive analysis of the results.
+
+The paper is organized as follows. Section \ref{Sec_Works} presents a discussion about the works that have been conducted and published in the past. Section \ref{Sec_Tools} outlines the tools and technologies that have been used, and methodology that has been adopted to implement analyses presented in the paper. Section \ref{Sec_Results} presents the results of the algorithms employed to perform time-series forecasting on the curated dataset. Finally, section \ref{Sec_Final} summarizes and concludes the paper.   
+
+\section{Related Work}\label{Sec_Works}
+With the onset of the pandemic, a lot of researches have been conducted by researchers worldwide on the various aspects of the mankind's life from health and hygiene to social and environmental contexts. Sengupta et al. \cite{Sengupta} estimated the date when the number of cases would reach the peak and when it will flatten out using methods shared from data analysis and machine learning paradigm. Gupta et al. \cite{Gupta} used time-series forecasting methods like ARIMA to predict the future trends in the rise of the COVID positive cases in India. Poddar and Yadav \cite{Poddar} concluded the relationship between the pandemic and the downfall of Indian Economy based on their null hypothesis. Paul \cite{Paul} showed the effect of pandemic on Indian economy graphically which included representation of unemployment rate based on CMIE data and various other related parameters. Katris \cite{Katris} analyzed different machine learning (neural networks, support vector regression) and time series (ARIMA, FARIMA) models to predict unemployment rates of several countries. Karlsson and Javed \cite{Javed} used both univariate and multivariate time series models like SARIMA, SETAR and VAR, and various macroeconomic variablesto predict unemployment rate and presented the results with 95\% forecasting confidence of SARIMA model. The paper also suggested that short term forecasting models give better result than long term. 
+
+Most of the researches related to forecasting for COVID have been mainly to predict the number of cases, or predict the unemployment rate using vanilla models and algorithms. Our research focuses on the social sphere of the problems that arose as a consequence of the pandemic. We try to incorporate the sudden spike that happened as a consequence of the pandemic, which made making predictions over Indian economy difficult. In this paper, we handle the shortcomings of the unavailability of reliable data and also the sudden spike that disturbed the underlying mathematics of the models.
+
+
+\section{Methodology Adopted}\label{Sec_Tools}
+\subsection{Data Collection}
+There is an unavailability of proper data regarding unemployment rate in India prior to 2016. Adequate data started to be gauged from 2016 onward by CMIE, India. But this much amount of data is not adequate and sufficient for training deep learning and highly computational statistical models - they need good amount of data to learn patterns. So, we also referred to World Bank and the International Labor Organization (ILO) for the data. After data aggregation and cleaning, the data before 2016 was just for the financial years and not for specific months, so we synthetically generated data for months using forward interpolation.
+
+\subsection{Heuristic-based Model Training and Prediction}
+The prediction of future effects has been made using Facebook's time-series forecasting framework Prophet. The accumulated data was first cleaned and pre-processed as per the requirements. Due to the pandemic in 2020 and unavailability of required data, basic implementations of these models could not perform and give reliable results. 
+
+To overcome the predilection of the learning models on comparatively larger pre-pandemic historical data and the pandemic-induced sudden hike in unemployment rate, we propose a new computational model for time-series forecasting. We first held 10\% of the data, and trained the models on rest of it. We also made two datasets - one with COVID-19 patterns and other without it. The COVID-19 patterns could be seen in Indian economics from the beginning of 2020. Since, we have the actual patterns, we combine the results of models on two datasets and minimize its difference with the actual values by finding the most approximate solution to the set of linear equations that we model. The validation-optimization pipeline could be well illustrated by figure \ref{Val-opt_Tech}.
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=5in]{Figures/Predictor Model.pdf}
+\caption{Computational model for time-series forecasting to counteract the sudden COVID-19 pattern.}
+\label{Val-opt_Tech}
+\end{figure*}
+
+We aim to minimize the function \(aP_{1} + bP_{2} - C\), where \(P_{1}\) is the vectors of predictions by the forecasting model that ran on dataset with COVID-19 patterns; \(P_{2}\) is the vectors of predictions by the forecasting model that ran on dataset without COVID-19 patterns; and \(C\) are the actual values for the held timeline. We then converted this equation to be represented using matrices, \textbf{AX - C}. Here, \textbf{A} is a \(2\times n\) matrix with each column containing \(P_{1}\) and \(P_{2}\) respectively, \textbf{X} is the vector of parameters \(a\) and \(b\) that need to be computed, and \textbf{C} is the vector of actual values. We then find an approximate solution to this matrix equation using Least Squares Approximation while applying three different underlying models for approximation. Using this proposed technique, we could counteract the issue of sudden noise that got inserted into the data due to the pandemic. After getting optimal values of \(a\) and \(b\), we retrain the models on full datasets, and then forecast for the next 24 months timeline by combining the results of two models using the model described in figure \ref{Val-opt_Tech}. Though, the hike is total anomaly in the pattern but it cannot be ignored, so we smoothed down the predicted results of the two models using a heuristic based on the length of timelines for which the two models have been trained on.
+
+%\begin{table}[!h]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}6
+%% if using array.sty, it might be a good idea to tweak the value of
+%% \extrarowheight as needed to properly center the text within the cells
+%\caption{Models with different hyperparameters.}
+%\label{models_table}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%Model & AUC-ROC\\
+%\hline
+%LSTM & 66\\
+%Prophet & 86\\
+%ARIMA & 76\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+\section{Results and Discussion}\label{Sec_Results}
+The experimentation and inferencing involves three steps. In the first step, we run the time-series forecasting framework on two types of datasets that we have created. Thereafter, we model the results in the form of matrix equations, and then in the last step, we combine the results and optimizing it by finding suitable parameters \(a\) and \(b\) using the three different algorithms under Least Squares Approximation, which are - 
+\begin{enumerate}
+	\item \emph{Levenberg-Marquardt algorithm}: LMA is an optimization algorithm that combines the best of both the steepest gradient descent method and the Gauss-Newton method. It aims to find the minimum of linear or non-linear function having an array of parameters. The gradient descent method is useful when the initial point is far from minimum point of the function. The Gauss Newton algorithm is useful when initial point is close to the minimum point of the function. The combination of the two helps the algorithm become independent of initial point and hence Levenberg-Marquardt algorithm is derived. It can be expressed by equation \ref{eq_LMA}.
+	\begin{equation}
+	\label{eq_LMA}
+		\begin{array}{l}
+			x_{n+1} = x_n - (H + \lambda I)^{-1} \bigtriangledown f(x_n) \\
+			when,\\
+			\lambda \rightarrow 0, \; Gauss-Newton's \; Method \\
+			\lambda \rightarrow \infty, \;  Gradient \; Descent \; Method
+		\end{array}
+	\end{equation}
+	Here, \(f(x)\) is a multi variable non-linear function, \(H\) is the Hessian matrix, \(I\) is the identity matrix, \(\lambda\) is a hyperparameter, and \(n\) is the number of iterations.\\
+	  
+	\item \emph{Trust Region Reflective algorithm}:  
+	
+	
+	\item \emph{Dogleg algorithm with rectangular trust regions}:
+\end{enumerate}
+
+All the training and inferencing procedures were performed on Google's Colab Platform with CPU runtime powered by a single core, two threaded Intel Xeon processor and 12.72 GB of RAM.
+
+\subsection{LSTM}
+LSTM or the Long-Short Term Memory is one of the versions of recurrent neural network architectures that helps to counter-fight the problem of exploding gradients that existed with RNNs.  
+
+\subsection{ARIMA}
+ARIMA or the Auto-Regressive Integrated Moving Average is a purely statistical model. It is mainly employed in the time-series models by statisticians and economists. There are two types of models under ARIMA, namely, seasonal and non-seasonal. The non-seasonal model takes into consideration three parameters - \(p\), \(d\) and \(q\). Here, \(p\) refers to the number of lags to be used to predict the series or it is the order of Auto Regressive term. \(q\) refers to the number of lagged errors or it is the order of the Moving Average term. Since, the very first operation involved in ARIMA model is making time series stationary, so, to perform that the most common way is to difference the previous value from the present value. So, here comes the third parameter \(d\) which refers to the minimum number of differencing required to make the time series stationary. The non-seasonal model doesn't account for any seasonal patterns, so to add that functionality Seasonal ARIMA or the SARIMA comes into picture. The mathematical form of the model involves two models - Auto Regressive model and Moving Average model. A pure Auto Regressive model can be mathematically expressed by equation \ref{autoRegr}, 	where, \(Y_{t-1}\) is the lag \(1\) of time series, \(\beta_1\) refers to the coefficient of lag \(1\), \(\epsilon_1\) is the error term, and, \(\alpha\) refers to the intercept term.
+
+\begin{equation}
+	\label{autoRegr}
+	Y_t = \alpha + \sum_{i = 1}^{p}\beta_i Y_{t-i} + \epsilon_1
+\end{equation}
+
+Similarly, Moving Average model can also be depicted mathematically by equation \ref{movAvg}, where error terms \(\epsilon_i\) refer to errors from auto regressive model, \(\phi_i\) are the coefficients of error terms and \(\alpha\) is the intercept term. 
+
+\begin{equation}
+	\label{movAvg}
+	Y_t = \alpha + \sum_{i = 1}^{q}\phi_i \epsilon_{t-i} + \epsilon_t
+\end{equation}
+
+Now, the ARIMA model consists of at least one differencing parameter to make time series stationary which combines Auto Regressive model and Moving Average model. The final mathematical form of the ARIMA model can be depicted by equation \ref{arima}. 
+
+\begin{equation}
+	\label{arima}
+	Y_t = \alpha + \sum_{i = 1}^{p}\beta_i Y_{t-i} + \sum_{i = 1}^{q}\phi_i \epsilon_{t-i}
+\end{equation}
+
+
+
+\subsection{Prophet}
+Prophet is an open-source time-series forecasting model developed by Facebook. The parameters in the model can be easily adjusted for tuning while integrating the core business knowledge. Missing data, outliers can be handled easily and automatically. The three main components of Prophet are \emph{trend}, \emph{seasonality} and \emph{holidays}. The mathematical model underneath Prophet is a decomposable additive model (Eqn. \ref{decomp_add_mod}) to accommodate the in-dependency of importance and forecasting effects of the components of the model.
+
+\begin{equation}
+	\label{decomp_add_mod}
+	y_m = \beta_0 + \sum_{n = 1}^{t}f_n(x_{mn}) + \epsilon_m
+\end{equation}    
+
+\begin{equation}
+	\label{Pro_decompo}
+	y(t) = g(t) + s(t) + h(t) + \epsilon_t
+\end{equation}
+
+The adapted version of the decomposable additive model can be expressed by the equation \ref{Pro_decompo}. Here, \(g(t)\) represents trend, \(s(t)\) seasonality,  \(h(t)\) holidays and \(\epsilon_t\) the error term associated with modelling. The main advantage is that unlike all other models which are natively made for univariate time-series, Prophet very easily accommodates multivariate dimension of time-series data paradigm. Prophet proved to be the most reliable algorithms out of all the three techniques we employed in our experiments. The Prophet architecture is made to train on the univariate data.
+
+\subsubsection{Results}
+As discussed in aforementioned sections, we train a model on two chunks of data, so as to accommodate the sudden hike in the data, which occurred as a consequence of COVID-19, heuristically. Our dataset contains records up till July 2020. Model 1 is trained on dataset from 1991 to 2019, and model 2 is trained on dataset from 1991 to July 2020. The second model takes into account the case of COVID-19 unusual trend in the data. The first model's data is available yearly, so as discussed earlier, we ran forward linear interpolation to generate monthly data.After this, we ran Prophet with seasonality mode as \emph{multiplicative} on both the datasets, and generated predictions for the time-frame ranging from December 2019 to November 2020. Thereafter, we combine the two predictions in three ways to obtain the best forecast pipeline, which not only takes into account the hike in the data but also smoothens out after the effect.
+
+Three parameters were created out of the variables outputted from the least squares approximation algorithm. These parameters as enlisted under Table \ref{params_table}, are generated by generating three different product combinations of the parameters with \emph{data ratio} parameters. This data ratio is the ratio of the timeline length of the two sets of data on which two different models are being trained. 
+
+\begin{table}[!t]
+% increase table row spacing, adjust to taste
+\renewcommand{\arraystretch}{1.3}
+\caption{Parameters used in our heuristic for Prophet model.}
+\label{params_table}
+\centering
+\begin{tabular}{|c||c|c|}
+\hline
+\textbf{Parameter} & \textbf{Var\_1} & \textbf{Var\_2}\\
+\hline
+Parameter 1 & -0.1113 & 1.1055\\
+Parameter 2 & -0.0547 & 0.5616\\
+Parameter 3 & -0.0565 & 0.5438\\
+\hline
+\end{tabular}
+\end{table}
+
+Thereafter, predictions from two models are combined as \(var_1 \times P1 + var_2 \times P2\), and three different sets of results are obtained. These results are generated as per our heuristic, and we choose the pair of parameters that show the least deviation from the actual data. First we checked the three different models on existing data to see how much they are affected by the sudden hike in the data. These are well elucidated using the plots \ref{LSA_Preds_params1}, \ref{LSA_Preds_params2} and \ref{LSA_Preds_params3}. Here, we can see that model with vanilla parameters just fits the data, and the other two underfit the data but they gradually pick up the trend and give proper values on the future timeframe. 
+
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Figures/LSA_Preds_params1.pdf}
+	\caption{Predictions on the known timeframe with parameter 1.}
+	\label{LSA_Preds_params1}
+\end{figure}
+
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Figures/LSA_Preds_params2.pdf}
+	\caption{Predictions on the known timeframe with parameter 2.}
+	\label{LSA_Preds_params2}
+\end{figure}
+
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Figures/LSA_Preds_params3.pdf}
+	\caption{Predictions on the known timeframe with parameter 3.}
+	\label{LSA_Preds_params3}
+\end{figure}
+
+After checking the pattern followed by the models, we then use our model architecture heuristically combined with three parameters to predict on the future timeframe, that is from December 2020 to December 2021. The results are elucidated by plots \ref{Preds_v1}, \ref{Preds_v2} and \ref{Preds_v3}. Plot \ref{Preds_v1} uses vanilla parameters obtained from the Least Squares Approximation algorithm which does not seem to give close to results prevailing in the future timeframe. The other two heuristic's parameters seem to somewhat give significantly good results. After comparing these with the current ongoing data, we conclude that the parameter 3 combination gave the best result.
+
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Figures/Preds_v1.pdf}
+	\caption{Predictions on the future timeframe with parameter 1.}
+	\label{Preds_v1}
+\end{figure}
+
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Figures/Preds_v2.pdf}
+	\caption{Predictions on the future timeframe with parameter 2.}
+	\label{Preds_v2}
+\end{figure}
+
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Figures/Preds_v3.pdf}
+	\caption{Predictions on the future timeframe with parameter 3.}
+	\label{Preds_v3}
+\end{figure}
+
+
+\section{Concluding Remarks}\label{Sec_Final}
+The current study aimed at predicting the conditions that may be prevalent in post-pandemic India in the next year. The work proposes a novel architecture for financial forecasting. 
+
+
+% if have a single appendix:
+%\appendix[Proof of the Zonklar Equations]
+% or
+%\appendix  % for no appendix heading
+% do not use \section anymore after \appendix, only \section*
+% is possibly needed
+
+% use appendices with more than one appendix
+% then use \section to start each appendix
+% you must declare a \section before using any
+% \subsection or using \label (\appendices by itself
+% starts a section numbered zero.)
+%
+
+
+%\appendices
+%\section{Proof of the First Zonklar Equation}
+%Appendix one text goes here.
+%
+%% you can choose not to have a title for an appendix
+%% if you want by leaving the argument blank
+%\section{}
+%Appendix two text goes here.
+
+
+%% use section* for acknowledgment
+%\ifCLASSOPTIONcompsoc
+%  % The Computer Society usually uses the plural form
+%  \section*{Acknowledgments}
+%\else
+%  % regular IEEE prefers the singular form
+%  \section*{Acknowledgment}
+%\fi
+%
+%
+%The authors would like to thank...
+
+
+% Can use something like this to put references on a page
+% by themselves when using endfloat and the captionsoff option.
+\ifCLASSOPTIONcaptionsoff
+  \newpage
+\fi
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+\begin{thebibliography}{1}
+
+\bibitem{Sengupta}
+Sengupta, Sohini, Sareeta Mugde, and Garima Sharma. "Covid-19 pandemic data analysis and forecasting using machine learning algorithms." medRxiv (2020). doi: https://doi.org/10.1101/2020.06.25.20140004
+
+\bibitem{Gupta}
+Gupta, Rajan, and Saibal Kumar Pal. "Trend Analysis and Forecasting of COVID-19 outbreak in India." medRxiv (2020). doi: https://doi.org/10.1101/2020.03.26.20044511
+
+\bibitem{Poddar}
+Poddar and Yadav. “Impact of COVID-19 on Indian Economy- A Review” Journal of Humanities and Social Sciences Research, Horizon Journals (2020). doi: https://doi.org/10.37534/bp.jhssr.2020.v2.nS.id1033.p15
+
+\bibitem{Paul}
+Paul, Dhritabrata. (2020). “Covid 19 Impact on Indian economy”. doi: 10.13140/RG.2.2.27275.23846.
+
+\bibitem{Katris}
+Katris, C. “Prediction of Unemployment Rates with Time Series and Machine Learning Techniques”. Comput Econ 55, 673–706 (2020). https://doi.org/10.1007/s10614-019-09908-9
+
+\bibitem{Javed}
+Meron, D. “Modeling and Forecasting Unemployment Rate in Sweden using various Econometric Measures”. Diss. M. SC. Thesis, Örebro University School of Business, Department of Applied Statistics, https://www. diva-portal. org/smash/get/diva2: 949512/FULLTEXT01. pdf., 59-68, 2016.
+
+\end{thebibliography}
+
+% biography section
+% 
+% If you have an EPS/PDF photo (graphicx package needed) extra braces are
+% needed around the contents of the optional argument to biography to prevent
+% the LaTeX parser from getting confused when it sees the complicated
+% \includegraphics command within an optional argument. (You could create
+% your own custom macro containing the \includegraphics command to make things
+% simpler here.)
+%\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
+% or if you just want to reserve a space for a photo:
+\newpage
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{Figures/Ashu_bw.png}}]{Ashutosh Agrahari}
+Ashutosh Agrahari is currently pursuing B.Tech. in Computer Science and Engineering from Amity University, Lucknow, India. His research interests encompass a wide range of fields, including computer vision, algorithm design, optimization techniques, machine learning, deep learning, and data analytics. He also finds interest in working with interdisciplinary departments to work on to tackle real-life problems.
+\end{IEEEbiography}
+
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{Figures/Pawan_bw.jpg}}]{Pawan Singh}
+	Pawan Singh received the B.E. degree in Computer Science and Engineering from Chaudhary Charan Singh University, Meerut, India, the M.Tech. degree in Information Technology from Guru Gobind Singh Indraprastha University, New Delhi, India, and the Ph.D. degree in Computer Science from Magadh University, Bodh Gaya, India, in 2013. He is currently Associate Professor in the department of Computer Science and Engineering, Amity University, Lucknow, India. Previously he has been Associate Professor at the School of Informatics, Hawassa Institute of Technology, Hawassa University, Awasa, Ethiopia. He has authored or co-authored number of research papers in the journals of international reputation. His current research interests include software metrics, software testing, software cost estimation, web structure mining, energy aware scheduling, and nature inspired meta-heuristic optimization techniques and its applications.
+\end{IEEEbiography}
+
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{Figures/baseem_bw.jpg}}]{Baseem Khan}
+	Baseem Khan (M’16) received the B.E. degree in electrical engineering from Rajiv Gandhi Technological University in 2008, and the M.Tech. and Ph.D. degrees in electrical engineering from the Maulana Azad National Institute of Technology, India, in 2010 and 2014, respectively. Since 2015, he has been an Assistant Professor with the Hawassa Institute of Technology, Hawassa University, Awasa, Ethiopia. His research interest includes power system restructuring, power system planning, smart grid, meta-heuristic optimization techniques, and renewable energy integration.
+\end{IEEEbiography}
+
+%\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{Figures/HHAlh_bw.jpg}}]{Hassan Haes Alhelou}
+%	Hassan Haes Alhelou was born in Syria, in 1988. He received the B.Sc. degree (ranked first) from the Tishreen University, Lattakia, Syria, in 2011; the M.Sc. degree from the Isfahan University of Technology, Isfahan, in 2014; and the Ph.D. candidate from the Isfahan University of Technology, Isfahan, Iran, in 2017, all in electrical engineering (with honors). He is a Lecturer with the Department of Electrical Power Engineering, Tishreen University, Syria. He is also a Ph.D. Researcher at IUT, Isfahan, Iran. His major research interests are power system dynamics, Power system operation and control, dynamic state estimation, frequency control, smart grids, micro-grids, demand response, load shedding, and power system protection.
+%\end{IEEEbiography}
+
+%\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{Figures/Siano_bw.jpg}}]{Pierluigi Siano}
+%	Pierluigi Siano received the M.Sc. degree in electronic engineering and the Ph.D. degree in information and electrical engineering from the University of Salerno, Salerno, Italy, in 2001 and 2006, respectively.
+	
+%	Since 2001, he has been performing research activities in the field of electrical power systems. Since 2005, he has been an Assistant Professor with the Department of Information and Electrical Engineering, University of Salerno. From 2006 to 2007, he was the Scientific Coordinator of the research project “Integration of New and Renewable Energy Into Urban Electrical Networks” supported by the British–Italian partnership program for young researchers (2005–2006). His research activities are centered on the integration of renewable distributed generation into electricity networks and Smart Grids and on the application of soft-computing methodologies to the analysis and planning of power systems. In these fields, he has published more than 65 technical papers, including 25 international journal papers and 40 international conference papers. His teaching activities are on the areas of power systems, technology and economics of energy, automation of power systems and power plants, and power electronics. He is a member of the Editorial Board of the International Journal on Power System Optimization.
+	
+%	Dr. Siano served as a Reviewer and the session Chairman for many international conferences. He has been the Special Sessions Cochair of the IEEE International Symposium on Industrial Electronics (ISIE) 2010 and is the Cochair of the Special Session on “Methods and Systems for Smart Grids Optimization” of IEEE-ISIE 2010. He has been a Guest Editor of the Special Section of the IEEE Transactions on Industrial Electronics on “Methods and Systems for Smart Grids Optimization.” He is a member of the “Technical Committee on Renewable Energy Systems” of the IEEE Industrial Electronics Society.
+%\end{IEEEbiography}
+
+% insert where needed to balance the two columns on the last page with
+% biographies
+%\newpage
+
+%\begin{IEEEbiographynophoto}{Jane Doe}
+%Biography text here.
+%\end{IEEEbiographynophoto}
+
+% You can push biographies down or up by placing
+% a \vfill before or after them. The appropriate
+% use of \vfill depends on what kind of text is
+% on the last page and whether or not the columns
+% are being equalized.
+
+%\vfill
+
+% Can be used to pull up biographies so that the bottom of the last one
+% is flush with the other column.
+%\enlargethispage{-5in}
+
+
+
+% that's all folks
+\end{document}
+
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that the IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+% However, the Computer Society has been known to put floats at the bottom.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command,
+% and the \label for the overall figure must come after \caption.
+% \hfil is used as a separator to get equal spacing.
+% Watch out that the combined width of all the subfigures on a 
+% line do not exceed the text width or a line break will occur.
+%
+%\begin{figure*}[!t]
+%\centering
+%\subfloat[Case I]{\includegraphics[width=2.5in]{box}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{box}%
+%\label{fig_second_case}}
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat[]), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+% Be aware that for subfig.sty to generate the (a), (b), etc., subfigure
+% labels, the optional argument to \subfloat must be present. If a
+% subcaption is not desired, just leave its contents blank,
+% e.g., \subfloat[].
+
+
+% An example of a floating table. Note that, for IEEE style tables, the
+% \caption command should come BEFORE the table and, given that table
+% captions serve much like titles, are usually capitalized except for words
+% such as a, an, and, as, at, but, by, for, in, nor, of, on, or, the, to
+% and up, which are usually not capitalized unless they are the first or
+% last word of the caption. Table text will default to \footnotesize as
+% the IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that the IEEE does not put floats in the very first column
+% - or typically anywhere on the first page for that matter. Also,
+% in-text middle ("here") positioning is typically not used, but it
+% is allowed and encouraged for Computer Society conferences (but
+% not Computer Society journals). Most IEEE journals/conferences use
+% top floats exclusively. 
+% Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the
+% \fnbelowfloat command of the stfloats package.
+

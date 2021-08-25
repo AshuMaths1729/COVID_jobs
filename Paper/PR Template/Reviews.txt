@@ -1,0 +1,31 @@
+REVIEW 1
+1. The paper addresses a issue that is most prevalent nowadays in today's scenario with a novel approach. The approach seems to be rather simple rather novel, but it is novel in the problem statement's domain.
+2. While Time-series forecasting has been used intensively previously but most of them fail when it comes to perform analysis on Indian datasets that are either not properly documented or are scarce due to improper data 	maintenance. This paper somewhat tried to overcome some of the shortcomings related to this reasearch domain.
+3. The paper does a fair task of addressing both the pressing problems, first being addressing data unavailability related to unemployment in India and the second being designing a framework to address the sudden unusual trend in the till-now smooth data as can be seen in the plots.
+4. Though current research in this domain specific to India is sparse, the paper goes a long distance to try and amalgamate the top three algorithms/frameworks available for Time-series forecasting purposes in a new propsed architecture. The paper doesn't presents findings of some of the employed algorithms, instead it replaces it with appropriate corollaries. It would have been better to see their plots at least.
+5. The Mathematics underneath the model could have been presented in a more formal and scientific way. But still, clear explanation provided for every step taken in the paper facilitates the reader to easily reproduce the work.
+
+
+REVIEW 2
+1. The appropriate plots of the results make understanding the points conveyed by the authors easy.
+2. The comparative analysis section helps us understand the novely of the solution being talked about in the paper. I liked the way the authors approached the 		problem. Till now, it was mostly performed by economists and financial experts, but applying an  ensemble is a totally novel thing in this domain.
+3. The use of Least Squares Approximation in the paper for combining the model results seems a good start, but it could have been replaced by something more sophisticated like genetic algorithms.
+4. The approach used by the authors can be extended to many other problems in the financial domain. Thanks to the authors to present this approach.
+5. The references are apt, though they are less and it is evident because of the fact of sparsity of research in this domain specific to India at the least.
+6. The paper's results seem to somewhat follow the trend followed by the unemployment rate in India currently, though there seems to be a fair amount of deviation from the original values. More in depth reaserch over the ensembling procedure can be undertaken to get better results.
+
+
+
+
+
+
+
+
+Technical Points:
+- The authors have utilised ARIMA and Prophet in their analysis. They have not analysed the dataset using other available time-series forecasting frameworks like SVR and LSTM.
+- The use of Least Squares Approximation is good start but the authors could have tried hands on various other approximation algorithms.
+- The authors have described the Dicky-Fuller Test under ARIMA experimentation, but they have not provided any numerical evidence for the same.
+- The use of ensemble seems to be a by-thought of the sudden trend issue in the data. The authors could have also presented the experimental findings of these time-series algorithms performing separately on the dataset.
+- Legends and ticks in Figure 2 and 3 are not legible enough.
+- The background technologies and tools discussion could have been supplemented with figures that would make easy for anyone to understand.
+- The comparison with existing researches can't be complete without experimenting and improving upon those works on the same grounds. Like for example, authors talk about FARIMA, SETAR and VAR models under Related Work sections, but they do not provide results pertaining to the same, so as to provide evidence of superiority of their approach. 

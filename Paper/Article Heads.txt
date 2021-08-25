@@ -1,0 +1,5 @@
+1. Introduction: Introduce CoV2 pandemic and discuss situation in India related to jobs and economy.
+2. Related Work: Describe others work and then tell what different will our work do.
+3. Materials and Methods: time series forecasting models, econometrics, data acquisition
+4. Results and Discussion: Forecast different params like BSE-SENSEX, Skills vs Unemployment growth, unemployment rate, inflation rate.
+5. Conclusions: Discuss behaviourally and set future directions for further research.

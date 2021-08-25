@@ -1,0 +1,16 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Related Work}{}% 2
+\BOOKMARK [1][-]{section.3}{Methodology Adopted}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Data Collection}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{Heuristic-based Model Training and Prediction}{section.3}% 5
+\BOOKMARK [1][-]{section.4}{Results and Discussion}{}% 6
+\BOOKMARK [2][-]{subsection.4.1}{LSTM}{section.4}% 7
+\BOOKMARK [2][-]{subsection.4.2}{ARIMA}{section.4}% 8
+\BOOKMARK [2][-]{subsection.4.3}{Prophet}{section.4}% 9
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Results}{subsection.4.3}% 10
+\BOOKMARK [1][-]{section.5}{Concluding Remarks}{}% 11
+\BOOKMARK [1][-]{section*.9}{References}{}% 12
+\BOOKMARK [1][-]{IEEEbiography.0}{Biographies}{}% 13
+\BOOKMARK [2][-]{IEEEbiography.1}{Ashutosh Agrahari}{IEEEbiography.0}% 14
+\BOOKMARK [2][-]{IEEEbiography.2}{Pawan Singh}{IEEEbiography.0}% 15
+\BOOKMARK [2][-]{IEEEbiography.3}{Baseem Khan}{IEEEbiography.0}% 16
